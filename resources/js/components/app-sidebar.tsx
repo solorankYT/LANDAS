@@ -1,19 +1,4 @@
-// resources/js/components/app-sidebar.tsx
 import { Link } from '@inertiajs/react';
-import AppLogo from '@/components/app-logo';
-import { NavMain } from '@/components/nav-main';
-import { NavUser } from '@/components/nav-user';
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-} from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
-import type { NavItem } from '@/types';
 import {
     LayoutGrid,
     UserPlus,
@@ -28,8 +13,20 @@ import {
     ShieldCheck,
 } from 'lucide-react';
 
-// TODO: swap dashboard() placeholders for real Wayfinder route helpers
-// (e.g. learners.index(), learners.create()) once those controllers exist.
+import AppLogo from '@/components/app-logo';
+import { NavMain } from '@/components/nav-main';
+import { NavUser } from '@/components/nav-user';
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from '@/components/ui/sidebar';
+import { dashboard } from '@/routes';
+import type { NavItem } from '@/types';
 
 const overviewNavItems: NavItem[] = [
     {

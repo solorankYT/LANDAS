@@ -1,6 +1,5 @@
 'use client'
 import { Head, Link, usePage } from '@inertiajs/react';
-import { Button } from '@/components/ui/button'
 import {
   GraduationCap,
   Clock,
@@ -11,9 +10,12 @@ import {
   ChevronRight,
   FileText,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState } from 'react';
 import type { ReactNode } from 'react'
+import { Button } from '@/components/ui/button'
 import { dashboard, login } from '@/routes';
+
+
 
 
 interface NavLinkProps {
