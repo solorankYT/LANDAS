@@ -1,3 +1,4 @@
+// resources/js/components/app-sidebar.tsx
 import { Link } from '@inertiajs/react';
 import AppLogo from '@/components/app-logo';
 import { NavMain } from '@/components/nav-main';
@@ -13,8 +14,24 @@ import {
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
+import {
+    LayoutGrid,
+    UserPlus,
+    Users,
+    ClipboardList,
+    CalendarCheck2,
+    TrendingUp,
+    AlertTriangle,
+    FileBarChart2,
+    FileSpreadsheet,
+    UserCog,
+    ShieldCheck,
+} from 'lucide-react';
 
-const mainNavItems: NavItem[] = [
+// TODO: swap dashboard() placeholders for real Wayfinder route helpers
+// (e.g. learners.index(), learners.create()) once those controllers exist.
+
+const overviewNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
@@ -22,6 +39,67 @@ const mainNavItems: NavItem[] = [
     },
 ];
 
+const learnerNavItems: NavItem[] = [
+    {
+        title: 'Register Learner',
+        href: dashboard(),
+        icon: UserPlus,
+    },
+    {
+        title: 'All Learners',
+        href: dashboard(),
+        icon: Users,
+    },
+];
+
+const performanceNavItems: NavItem[] = [
+    {
+        title: 'FTL Scores',
+        href: dashboard(),
+        icon: ClipboardList,
+    },
+    {
+        title: 'Attendance',
+        href: dashboard(),
+        icon: CalendarCheck2,
+    },
+    {
+        title: 'Performance',
+        href: dashboard(),
+        icon: TrendingUp,
+    },
+    {
+        title: 'At-risk Learners',
+        href: dashboard(),
+        icon: AlertTriangle,
+    },
+];
+
+const reportsNavItems: NavItem[] = [
+    {
+        title: 'DepEd Reports',
+        href: dashboard(),
+        icon: FileBarChart2,
+    },
+    {
+        title: 'Export Data',
+        href: dashboard(),
+        icon: FileSpreadsheet,
+    },
+];
+
+const userManagementNavItems: NavItem[] = [
+    {
+        title: 'Manage Users',
+        href: dashboard(),
+        icon: UserCog,
+    },
+    {
+        title: 'Roles & Permissions',
+        href: dashboard(),
+        icon: ShieldCheck,
+    },
+];
 
 export function AppSidebar() {
     return (
@@ -39,7 +117,11 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <NavMain items={mainNavItems} />
+                <NavMain items={overviewNavItems} label="Overview" />
+                <NavMain items={learnerNavItems} label="Learner Information" />
+                <NavMain items={performanceNavItems} label="Performance Monitoring" />
+                <NavMain items={reportsNavItems} label="Reports & Insights" />
+                <NavMain items={userManagementNavItems} label="User Management" />
             </SidebarContent>
 
             <SidebarFooter>
